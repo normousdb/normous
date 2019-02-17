@@ -1,7 +1,7 @@
-Building MongoDB
+Building Normous
 ================
 
-To build MongoDB, you will need:
+To build Normous, you will need:
 
 * A modern C++ compiler. One of the following is required.
     * GCC 5.4.0 or newer
@@ -15,22 +15,22 @@ To build MongoDB, you will need:
   * typing
   * cheetah
 
-MongoDB supports the following architectures: arm64, ppc64le, s390x, and x86-64.
+Normous supports the following architectures: arm64, ppc64le, s390x, and x86-64.
 More detailed platform instructions can be found below.
 
 
-MongoDB Tools
+Normous Tools
 --------------
 
-The MongoDB command line tools (mongodump, mongorestore, mongoimport, mongoexport, etc)
+The Normous command line tools (normousdump, normousrestore, normousimport, normousexport, etc)
 have been rewritten in [Go](http://golang.org/) and are no longer included in this repository.
 
-The source for the tools is now available at [mongodb/mongo-tools](https://github.com/mongodb/mongo-tools).
+The source for the tools is now available at [normousdb/normous-tools](https://github.com/normousdb/normous-tools).
 
 Python Prerequisites
 ---------------
 
-In order to build MongoDB, Python 2.7.x is required, and several Python modules. To install
+In order to build Normous, Python 2.7.x is required, and several Python modules. To install
 the required Python modules, run:
 
     $ pip2 install -r etc/pip/compile-requirements.txt
@@ -41,49 +41,34 @@ associated with Python 2.7.x.
 SCons
 ---------------
 
-For detail information about building, please see [the build manual](https://github.com/mongodb/mongo/wiki/Build-Mongodb-From-Source)
+For detail information about building, please see [the build manual](https://github.com/normousdb/normous/docs/) (Note: TODO)
 
-If you want to build everything (mongod, mongo, tests, etc):
+If you want to build everything (normousd, normous, tests, etc):
 
     $ python2 buildscripts/scons.py all
 
 If you only want to build the database:
 
-    $ python2 buildscripts/scons.py mongod
+    $ python2 buildscripts/scons.py normousd
 
-***Note***: For C++ compilers that are newer than the supported version, the compiler may issue new warnings that cause MongoDB to fail to build since the build system treats compiler warnings as errors. To ignore the warnings, pass the switch --disable-warnings-as-errors to scons.
+***Note***: For C++ compilers that are newer than the supported version, the compiler may issue new warnings that cause Normous to fail to build since the build system treats compiler warnings as errors. To ignore the warnings, pass the switch --disable-warnings-as-errors to scons.
 
-    $ python2 buildscripts/scons.py mongod --disable-warnings-as-errors
+    $ python2 buildscripts/scons.py normousd --disable-warnings-as-errors
 
 To install
 
-    $ python2 buildscripts/scons.py --prefix=/opt/mongo install
+    $ python2 buildscripts/scons.py --prefix=/opt/normous install
 
-Please note that prebuilt binaries are available on [mongodb.org](http://www.mongodb.org/downloads) and may be the easiest way to get started.
+Please note that prebuilt binaries are available on [github.com](https://github.com/normousdb/normous/releases) and may be the easiest way to get started.
 
 SCons Targets
 --------------
 
-* mongod
-* mongos
-* mongo
-* core (includes mongod, mongos, mongo)
+* normousd
+* normouss
+* normous
+* core (includes normousd, normouss, normous)
 * all
-
-Windows
---------------
-
-See [the windows build manual](https://github.com/mongodb/mongo/wiki/Build-Mongodb-From-Source#windows-specific-instructions)
-
-Build requirements:
-* Visual Studio 2015 Update 2 or newer
-* Python 2.7, ActiveState ActivePython 2.7.x Community Edition for Windows is recommended
-
-If using VS 2015 Update 3, two hotfixes are required to build. For details, see:
-* https://support.microsoft.com/en-us/help/3207317/visual-c-optimizer-fixes-for-visual-studio-2015-update-3
-* https://support.microsoft.com/en-za/help/4020481/fix-link-exe-crashes-with-a-fatal-lnk1000-error-when-you-use-wholearch
-
-Or download a prebuilt binary for Windows at www.mongodb.org.
 
 Debian/Ubuntu
 --------------
@@ -97,17 +82,6 @@ To run tests as well, you will need PyMongo:
 
     # aptitude install python-pymongo
 
-OS X
---------------
-
-Using [Homebrew](http://brew.sh):
-
-    $ brew install mongodb
-
-Using [MacPorts](http://www.macports.org):
-
-    $ sudo port install mongodb
-
 FreeBSD
 --------------
 
@@ -117,7 +91,7 @@ Install the following ports:
   * lang/clang38
   * lang/python
 
-Optional Components if you want to use system libraries instead of the libraries included with MongoDB
+Optional Components if you want to use system libraries instead of the libraries included with Normous
 
   * archivers/snappy
   * lang/v8
@@ -137,4 +111,3 @@ Install the following ports:
 Special Build Notes
 --------------
   * [open solaris on ec2](building.opensolaris.ec2.md)
-

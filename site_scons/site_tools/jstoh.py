@@ -7,9 +7,9 @@ def jsToHeader(target, source):
     outFile = target
 
     h = [
-        '#include "mongo/base/string_data.h"',
-        '#include "mongo/scripting/engine.h"',
-        'namespace mongo {',
+        '#include "normous/base/string_data.h"',
+        '#include "normous/scripting/engine.h"',
+        'namespace normous {',
         'namespace JSFiles{',
     ]
 
@@ -34,7 +34,7 @@ def jsToHeader(target, source):
                  (objname, filename.replace('\\', '/'), stringname, stringname))
 
     h.append("} // namespace JSFiles")
-    h.append("} // namespace mongo")
+    h.append("} // namespace normous")
     h.append("")
 
     text = '\n'.join(h)

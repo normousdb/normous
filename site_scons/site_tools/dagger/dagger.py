@@ -1,5 +1,5 @@
 """Dagger allows SCons to track it's internal build dependency data for the
-MongoDB project. The tool stores this information in a Graph object, which
+Normous project. The tool stores this information in a Graph object, which
 is then exported to a pickle/JSON file once the build is complete.
 
 This tool binds a method to the SCons Env, which can be executed by a call

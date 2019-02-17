@@ -1,6 +1,6 @@
 # -*- mode: python; -*-
 
-# This SConscript describes build rules for the "mongo" project.
+# This SConscript describes build rules for the "normous" project.
 
 import itertools
 import os
@@ -16,7 +16,7 @@ Import("use_system_version_of_library")
 
 env = env.Clone()
 
-env.InjectMongoIncludePaths()
+env.InjectNormousIncludePaths()
 
 env.SConscript(
     dirs=[
@@ -160,10 +160,10 @@ cmd_line = " ".join(sys.argv).encode('string-escape')
 if env.TargetOSIs('windows'):
     cmd_line = cmd_line.replace('\\', r'\\')
 
-module_list = '{ %s }' % ', '.join([ '"{0}"'.format(x) for x in env['MONGO_MODULES'] ])
+module_list = '{ %s }' % ', '.join([ '"{0}"'.format(x) for x in env['NORMOUS_MODULES'] ])
 
 # This generates a numeric representation of the version string so that
-# you can easily compare versions of MongoDB without having to parse
+# you can easily compare versions without having to parse
 # the version string.
 #
 # The rules for this are
@@ -180,7 +180,7 @@ module_list = '{ %s }' % ', '.join([ '"{0}"'.format(x) for x in env['MONGO_MODUL
 # 3.1.1         = 3010199
 #
 version_parts = [ x for x in re.match(r'^(\d+)\.(\d+)\.(\d+)-?((?:(rc)(\d+))?.*)?',
-    env['MONGO_VERSION']).groups() ]
+    env['NORMOUS_VERSION']).groups() ]
 version_extra = version_parts[3] if version_parts[3] else ""
 if version_parts[4] == 'rc':
     version_parts[3] = int(version_parts[5]) + -50
@@ -191,10 +191,10 @@ else:
     version_parts[3] = 0
 version_parts = [ int(x) for x in version_parts[:4]]
 
-# This turns the MONGO_BUILDINFO_ENVIRONMENT_DATA tuples into a std::vector of
+# This turns the NORMOUS_BUILDINFO_ENVIRONMENT_DATA tuples into a std::vector of
 # std::tuple<string, string, bool, bool>.
 buildInfoInitializer = []
-for tup in env['MONGO_BUILDINFO_ENVIRONMENT_DATA']:
+for tup in env['NORMOUS_BUILDINFO_ENVIRONMENT_DATA']:
     def pyToCXXBool(val):
         return "true" if val else "false"
     def wrapInQuotes(val):
@@ -214,15 +214,15 @@ buildInfoInitializer = '{{ {0} }}'.format(', '.join(buildInfoInitializer))
 generatedVersionFile = env.Substfile(
     'util/version_constants.h.in',
     SUBST_DICT=[
-        ('@mongo_version@', env['MONGO_VERSION']),
-        ('@mongo_version_major@', version_parts[0]),
-        ('@mongo_version_minor@', version_parts[1]),
-        ('@mongo_version_patch@', version_parts[2]),
-        ('@mongo_version_extra@', version_parts[3]),
-        ('@mongo_version_extra_str@', version_extra),
-        ('@mongo_git_hash@', env['MONGO_GIT_HASH']),
+        ('@normous_version@', env['NORMOUS_VERSION']),
+        ('@normous_version_major@', version_parts[0]),
+        ('@normous_version_minor@', version_parts[1]),
+        ('@normous_version_patch@', version_parts[2]),
+        ('@normous_version_extra@', version_parts[3]),
+        ('@normous_version_extra_str@', version_extra),
+        ('@normous_git_hash@', env['NORMOUS_GIT_HASH']),
         ('@buildinfo_js_engine@', js_engine_ver),
-        ('@buildinfo_allocator@', env['MONGO_ALLOCATOR']),
+        ('@buildinfo_allocator@', env['NORMOUS_ALLOCATOR']),
         ('@buildinfo_modules@', module_list),
         ('@buildinfo_environment_data@', buildInfoInitializer),
     ])
@@ -233,34 +233,34 @@ if env.TargetOSIs('windows'):
     generatedResourceConstantFile = enterpriseEnv.Substfile(
         'util/resource_constants.h.in',
         SUBST_DICT=[
-            ('@mongo_version@', env['MONGO_VERSION']),
-            ('@mongo_version_major@', version_parts[0]),
-            ('@mongo_version_minor@', version_parts[1]),
-            ('@mongo_version_patch@', version_parts[2]),
-            ('@mongo_git_hash@', env['MONGO_GIT_HASH']),
+            ('@normous_version@', env['NORMOUS_VERSION']),
+            ('@normous_version_major@', version_parts[0]),
+            ('@normous_version_minor@', version_parts[1]),
+            ('@normous_version_patch@', version_parts[2]),
+            ('@normous_git_hash@', env['NORMOUS_GIT_HASH']),
         ])
     env.Alias('generated-sources', generatedResourceConstantFile)
 
 config_header_substs = (
-    ('@mongo_config_altivec_vec_vbpermq_output_index@', 'MONGO_CONFIG_ALTIVEC_VEC_VBPERMQ_OUTPUT_INDEX'),
-    ('@mongo_config_byte_order@', 'MONGO_CONFIG_BYTE_ORDER'),
-    ('@mongo_config_debug_build@', 'MONGO_CONFIG_DEBUG_BUILD'),
-    ('@mongo_config_has_ssl_set_ecdh_auto@', 'MONGO_CONFIG_HAS_SSL_SET_ECDH_AUTO'),
-    ('@mongo_config_have_execinfo_backtrace@', 'MONGO_CONFIG_HAVE_EXECINFO_BACKTRACE'),
-    ('@mongo_config_have_fips_mode_set@', 'MONGO_CONFIG_HAVE_FIPS_MODE_SET'),
-    ('@mongo_config_have_header_unistd_h@', 'MONGO_CONFIG_HAVE_HEADER_UNISTD_H'),
-    ('@mongo_config_have_memset_s@', 'MONGO_CONFIG_HAVE_MEMSET_S'),
-    ('@mongo_config_have_posix_monotonic_clock@', 'MONGO_CONFIG_HAVE_POSIX_MONOTONIC_CLOCK'),
-    ('@mongo_config_have_pthread_setname_np@', 'MONGO_CONFIG_HAVE_PTHREAD_SETNAME_NP'),
-    ('@mongo_config_have_std_enable_if_t@', 'MONGO_CONFIG_HAVE_STD_ENABLE_IF_T'),
-    ('@mongo_config_have_std_make_unique@', 'MONGO_CONFIG_HAVE_STD_MAKE_UNIQUE'),
-    ('@mongo_config_have_strnlen@', 'MONGO_CONFIG_HAVE_STRNLEN'),
-    ('@mongo_config_max_extended_alignment@', 'MONGO_CONFIG_MAX_EXTENDED_ALIGNMENT'),
-    ('@mongo_config_optimized_build@', 'MONGO_CONFIG_OPTIMIZED_BUILD'),
-    ('@mongo_config_ssl@', 'MONGO_CONFIG_SSL'),
-    ('@mongo_config_ssl_has_asn1_any_definitions@', 'MONGO_CONFIG_HAVE_ASN1_ANY_DEFINITIONS'),
-    ('@mongo_config_ssl_provider@', 'MONGO_CONFIG_SSL_PROVIDER'),
-    ('@mongo_config_wiredtiger_enabled@', 'MONGO_CONFIG_WIREDTIGER_ENABLED'),
+    ('@normous_config_altivec_vec_vbpermq_output_index@', 'NORMOUS_CONFIG_ALTIVEC_VEC_VBPERMQ_OUTPUT_INDEX'),
+    ('@normous_config_byte_order@', 'NORMOUS_CONFIG_BYTE_ORDER'),
+    ('@normous_config_debug_build@', 'NORMOUS_CONFIG_DEBUG_BUILD'),
+    ('@normous_config_has_ssl_set_ecdh_auto@', 'NORMOUS_CONFIG_HAS_SSL_SET_ECDH_AUTO'),
+    ('@normous_config_have_execinfo_backtrace@', 'NORMOUS_CONFIG_HAVE_EXECINFO_BACKTRACE'),
+    ('@normous_config_have_fips_mode_set@', 'NORMOUS_CONFIG_HAVE_FIPS_MODE_SET'),
+    ('@normous_config_have_header_unistd_h@', 'NORMOUS_CONFIG_HAVE_HEADER_UNISTD_H'),
+    ('@normous_config_have_memset_s@', 'NORMOUS_CONFIG_HAVE_MEMSET_S'),
+    ('@normous_config_have_posix_monotonic_clock@', 'NORMOUS_CONFIG_HAVE_POSIX_MONOTONIC_CLOCK'),
+    ('@normous_config_have_pthread_setname_np@', 'NORMOUS_CONFIG_HAVE_PTHREAD_SETNAME_NP'),
+    ('@normous_config_have_std_enable_if_t@', 'NORMOUS_CONFIG_HAVE_STD_ENABLE_IF_T'),
+    ('@normous_config_have_std_make_unique@', 'NORMOUS_CONFIG_HAVE_STD_MAKE_UNIQUE'),
+    ('@normous_config_have_strnlen@', 'NORMOUS_CONFIG_HAVE_STRNLEN'),
+    ('@normous_config_max_extended_alignment@', 'NORMOUS_CONFIG_MAX_EXTENDED_ALIGNMENT'),
+    ('@normous_config_optimized_build@', 'NORMOUS_CONFIG_OPTIMIZED_BUILD'),
+    ('@normous_config_ssl@', 'NORMOUS_CONFIG_SSL'),
+    ('@normous_config_ssl_has_asn1_any_definitions@', 'NORMOUS_CONFIG_HAVE_ASN1_ANY_DEFINITIONS'),
+    ('@normous_config_ssl_provider@', 'NORMOUS_CONFIG_SSL_PROVIDER'),
+    ('@normous_config_wiredtiger_enabled@', 'NORMOUS_CONFIG_WIREDTIGER_ENABLED'),
 )
 
 def makeConfigHeaderDefine(self, key):
@@ -277,44 +277,44 @@ generateConfigHeaderFile = env.Substfile(
 env.Alias('generated-sources', generateConfigHeaderFile)
 
 env.Library(
-    target="mongod_options_init",
+    target="normousd_options_init",
     source=[
-        "db/mongod_options_init.cpp",
+        "db/normousd_options_init.cpp",
     ],
     LIBDEPS=[
         'base',
     ],
     LIBDEPS_PRIVATE=[
-        'db/mongod_options',
-        '$BUILD_DIR/mongo/util/net/ssl_options_server' if has_option('ssl') else '',
+        'db/normousd_options',
+        '$BUILD_DIR/normous/util/net/ssl_options_server' if has_option('ssl') else '',
     ]
 )
 
 env.Library(
-    target="mongodmain",
+    target="normousdmain",
     source=[
         "db/db.cpp",
     ],
     LIBDEPS_PRIVATE=[
         'base',
-        'db/auth/authmongod',
+        'db/auth/authnormousd',
         'db/catalog/health_log',
-        'db/commands/mongod',
-        'db/commands/mongod_fcv',
+        'db/commands/normousd',
+        'db/commands/normousd_fcv',
         'db/commands/server_status_servers',
         'db/dbdirectclient',
-        'db/free_mon/free_mon_mongod',
-        'db/ftdc/ftdc_mongod',
+        'db/free_mon/free_mon_normousd',
+        'db/ftdc/ftdc_normousd',
         'db/index_d',
         'db/initialize_snmp',
         'db/keys_collection_client_direct',
         'db/kill_sessions_local',
-        'db/logical_session_cache_factory_mongod',
-        'db/mongod_options',
-        'db/mongodandmongos',
+        'db/logical_session_cache_factory_normousd',
+        'db/normousd_options',
+        'db/normousdandnormouss',
         'db/periodic_runner_job_abort_expired_transactions',
         'db/periodic_runner_job_decrease_snapshot_cache_pressure',
-        'db/pipeline/process_interface_factory_mongod',
+        'db/pipeline/process_interface_factory_normousd',
         'db/query_exec',
         'db/read_concern_d_impl',
         'db/repair_database',
@@ -328,12 +328,12 @@ env.Library(
         'db/s/sharding_runtime_d',
         'db/serveronly',
         'db/service_context_d',
-        'db/startup_warnings_mongod',
+        'db/startup_warnings_normousd',
         'db/storage/backup_cursor_hooks',
         'db/system_index',
         'db/ttl_d',
         'executor/network_interface_factory',
-        'mongod_options_init',
+        'normousd_options_init',
         'rpc/rpc',
         's/commands/shared_cluster_commands',
         'transport/service_entry_point',
@@ -352,24 +352,24 @@ if env.TargetOSIs('windows'):
     generatedDbManifest = env.Substfile(
         'db/db.manifest.in',
         SUBST_DICT=[
-            ('@mongo_version_major@', version_parts[0]),
-            ('@mongo_version_minor@', version_parts[1]),
-            ('@mongo_version_patch@', version_parts[2]),
-            ('@mongo_version_extra@', version_parts[3]),
-            ('@mongo_version_extra_str@', version_extra),
+            ('@normous_version_major@', version_parts[0]),
+            ('@normous_version_minor@', version_parts[1]),
+            ('@normous_version_patch@', version_parts[2]),
+            ('@normous_version_extra@', version_parts[3]),
+            ('@normous_version_extra_str@', version_extra),
         ])
 
     env.Alias('generated-sources', generatedDbManifest)
     env.Depends("db/db.res", generatedDbManifest)
 
-mongod = env.Program(
-    target="mongod",
+normousd = env.Program(
+    target="normousd",
     source=[
         "db/dbmain.cpp",
     ] + env.WindowsResourceFile("db/db.rc"),
     LIBDEPS=[
         'base',
-        'mongodmain',
+        'normousdmain',
     ],
     INSTALL_ALIAS=[
         'core',
@@ -381,50 +381,50 @@ mongod = env.Program(
 hygienic = get_option('install-mode') == 'hygienic'
 
 if hygienic:
-    env.Default('$INSTALL_DIR/bin/mongod$PROGSUFFIX')
+    env.Default('$INSTALL_DIR/bin/normousd$PROGSUFFIX')
 else:
-    env.Default(env.Install('#/', mongod))
+    env.Default(env.Install('#/', normousd))
 
 # tools
-rewrittenTools = [ "mongodump", "mongorestore", "mongoexport", "mongoimport", "mongostat", "mongotop", "bsondump", "mongofiles" ]
+rewrittenTools = [ "normousdump", "normousrestore", "normousexport", "normousimport", "normousstat", "normoustop", "bsondump", "normousfiles" ]
 
 if env.TargetOSIs('windows'):
     generatedServerManifest = env.Substfile(
         's/server.manifest.in',
         SUBST_DICT=[
-            ('@mongo_version_major@', version_parts[0]),
-            ('@mongo_version_minor@', version_parts[1]),
-            ('@mongo_version_patch@', version_parts[2]),
-            ('@mongo_version_extra@', version_parts[3]),
-            ('@mongo_version_extra_str@', version_extra),
+            ('@normous_version_major@', version_parts[0]),
+            ('@normous_version_minor@', version_parts[1]),
+            ('@normous_version_patch@', version_parts[2]),
+            ('@normous_version_extra@', version_parts[3]),
+            ('@normous_version_extra_str@', version_extra),
         ])
 
     env.Alias('generated-sources', generatedServerManifest)
     env.Depends("s/server.res", generatedServerManifest)
 
-# mongos
-mongos = env.Program(
-    target='mongos',
+# normouss
+normouss = env.Program(
+    target='normouss',
     source=[
         's/cluster_cursor_stats.cpp',
-        's/mongos_options.cpp',
-        's/mongos_options_init.cpp',
+        's/normouss_options.cpp',
+        's/normouss_options_init.cpp',
         's/s_sharding_server_status.cpp',
         's/server.cpp',
-        's/service_entry_point_mongos.cpp',
+        's/service_entry_point_normouss.cpp',
         's/sharding_uptime_reporter.cpp',
-        's/version_mongos.cpp',
+        's/version_normouss.cpp',
     ] + env.WindowsResourceFile("s/server.rc"),
     LIBDEPS=[
         'db/audit',
-        'db/auth/authmongos',
+        'db/auth/authnormouss',
         'db/commands/server_status',
         'db/commands/server_status_core',
         'db/commands/server_status_servers',
         'db/curop',
-        'db/ftdc/ftdc_mongos',
+        'db/ftdc/ftdc_normouss',
         'db/logical_time_metadata_hook',
-        'db/mongodandmongos',
+        'db/normousdandnormouss',
         'db/server_options',
         'db/startup_warnings_common',
         'db/stats/counters',
@@ -432,8 +432,8 @@ mongos = env.Program(
         's/commands/shared_cluster_commands',
         's/committed_optime_metadata_hook',
         's/coreshard',
-        's/is_mongos',
-        's/sharding_egress_metadata_hook_for_mongos',
+        's/is_normouss',
+        's/sharding_egress_metadata_hook_for_normouss',
         's/sharding_initialization',
         's/sharding_router_api',
         's/query/cluster_cursor_cleanup_job',
@@ -452,7 +452,7 @@ mongos = env.Program(
 )
 
 if not hygienic:
-    env.Install('#/', mongos)
+    env.Install('#/', normouss)
 
 env.Library("linenoise_utf8",
     source=[
@@ -464,12 +464,12 @@ env.Library("linenoise_utf8",
 if not has_option('noshell') and usemozjs:
     shell_core_env = env.Clone()
     if has_option("safeshell"):
-        shell_core_env.Append(CPPDEFINES=["MONGO_SAFE_SHELL"])
+        shell_core_env.Append(CPPDEFINES=["NORMOUS_SAFE_SHELL"])
     shell_core_env.Library("shell_core",
                 source=[
                     "shell/linenoise.cpp",
                     "shell/mk_wcwidth.cpp",
-                    "shell/mongo-server.cpp",
+                    "shell/normous-server.cpp",
                     "shell/shell_options.cpp",
                     "shell/shell_utils.cpp",
                     "shell/shell_utils_extended.cpp",
@@ -479,7 +479,7 @@ if not has_option('noshell') and usemozjs:
                     'client/clientdriver_network',
                     'db/catalog/index_key_validate',
                     'db/logical_session_id_helpers',
-                    'db/mongohasher',
+                    'db/normoushasher',
                     'db/query/command_request_response',
                     'db/query/query_request',
                     'db/server_options_core',
@@ -487,7 +487,7 @@ if not has_option('noshell') and usemozjs:
                     'rpc/protocol',
                     'scripting/scripting',
                     'shell/benchrun',
-                    'shell/mongojs',
+                    'shell/normousjs',
                     'transport/message_compressor',
                     'transport/transport_layer_manager',
                     'util/net/network',
@@ -514,23 +514,23 @@ if not has_option('noshell') and usemozjs:
     if env.TargetOSIs('windows'):
         shellEnv.Append(LIBS=["winmm.lib"])
 
-        generatedMongoManifest = shellEnv.Substfile(
+        generatedNormousManifest = shellEnv.Substfile(
                 'shell/shell.manifest.in',
                 SUBST_DICT=[
-                    ('@mongo_version_major@', version_parts[0]),
-                    ('@mongo_version_minor@', version_parts[1]),
-                    ('@mongo_version_patch@', version_parts[2]),
-                    ('@mongo_version_extra@', version_parts[3]),
-                    ('@mongo_version_extra_str@', version_extra),
+                    ('@normous_version_major@', version_parts[0]),
+                    ('@normous_version_minor@', version_parts[1]),
+                    ('@normous_version_patch@', version_parts[2]),
+                    ('@normous_version_extra@', version_parts[3]),
+                    ('@normous_version_extra_str@', version_extra),
                 ])
-        shellEnv.Alias('generated-sources', generatedMongoManifest)
-        shellEnv.Depends("shell/shell.res", generatedMongoManifest)
+        shellEnv.Alias('generated-sources', generatedNormousManifest)
+        shellEnv.Depends("shell/shell.res", generatedNormousManifest)
 
-    mongo_shell = shellEnv.Program(
-        "mongo",
+    normous_shell = shellEnv.Program(
+        "normous",
         [
             "shell/dbshell.cpp",
-            "shell/mongodbcr.cpp",
+            "shell/normousdbcr.cpp",
             "shell/shell_options_init.cpp",
         ] + env.WindowsResourceFile("shell/shell.rc"),
         LIBDEPS=[
@@ -538,11 +538,11 @@ if not has_option('noshell') and usemozjs:
             "shell_core",
             "db/server_options_core",
             "client/clientdriver_network",
-            "$BUILD_DIR/mongo/util/password",
+            "$BUILD_DIR/normous/util/password",
         ],
         LIBDEPS_PRIVATE=[
-            "$BUILD_DIR/mongo/client/connection_string",
-            '$BUILD_DIR/mongo/util/net/ssl_options_client' if has_option('ssl') else '',
+            "$BUILD_DIR/normous/client/connection_string",
+            '$BUILD_DIR/normous/util/net/ssl_options_client' if has_option('ssl') else '',
         ],
         INSTALL_ALIAS=[
             'shell',
@@ -551,7 +551,7 @@ if not has_option('noshell') and usemozjs:
     )
 
     if not hygienic:
-        shellEnv.Install( '#/', mongo_shell )
+        shellEnv.Install( '#/', normous_shell )
 else:
     shellEnv = None
 
@@ -630,28 +630,28 @@ def installExternalBinary( e, name_str ):
 # "--use-new-tools" adds dependencies for rewritten (Go) tools
 # It is required for "dist" but optional for "install"
 if has_option("use-new-tools"):
-    toolsRoot = "src/mongo-tools"
+    toolsRoot = "src/normous-tools"
     for t in rewrittenTools:
         installExternalBinary(env, "%s/%s" % (toolsRoot, t))
-    if has_option("build-mongoreplay") and get_option("build-mongoreplay") == "true":
-        installExternalBinary(env, "%s/%s" % (toolsRoot, "mongoreplay"))
+    if has_option("build-normousreplay") and get_option("build-normousreplay") == "true":
+        installExternalBinary(env, "%s/%s" % (toolsRoot, "normousreplay"))
 
 # legacy tools
 if not hygienic:
-    env.Alias("tools", "#/" + add_exe("mongobridge"))
+    env.Alias("tools", "#/" + add_exe("normousbridge"))
 
-installBinary( env, "mongod" )
-installBinary( env, "mongos" )
+installBinary( env, "normousd" )
+installBinary( env, "normouss" )
 
 if shellEnv is not None:
-    installBinary( shellEnv, "mongo" )
+    installBinary( shellEnv, "normous" )
     if not hygienic:
-        env.Alias( "core", [ '#/%s' % b for b in [ add_exe( "mongo" ) ] ] )
+        env.Alias( "core", [ '#/%s' % b for b in [ add_exe( "normous" ) ] ] )
 
 if not hygienic:
-    env.Alias( "core", [ '#/%s' % b for b in [ add_exe( "mongod" ), add_exe( "mongos" ) ] ] )
+    env.Alias( "core", [ '#/%s' % b for b in [ add_exe( "normousd" ), add_exe( "normouss" ) ] ] )
 
-# Stage the top-level mongodb banners
+# Stage the top-level normousdb banners
 distsrc = env.Dir('#distsrc')
 env.Append(MODULE_BANNERS = [distsrc.File('README'),
                              distsrc.File('THIRD-PARTY-NOTICES'),
@@ -677,7 +677,7 @@ module_banner_dirs = set([Dir('#').rel_path(f.get_dir()) for f in env['MODULE_BA
 module_banner_transforms = ["--transform %s=$SERVER_DIST_BASENAME" % d for d in module_banner_dirs]
 
 # Allow modules to map original file name directories to subdirectories
-# within the archive (e.g. { "src/mongo/db/modules/enterprise/docs": "snmp"})
+# within the archive (e.g. { "src/normous/db/modules/enterprise/docs": "snmp"})
 archive_addition_transforms = []
 for full_dir, archive_dir in env["ARCHIVE_ADDITION_DIR_MAP"].items():
   archive_addition_transforms.append("--transform \"%s=$SERVER_DIST_BASENAME/%s\"" %
@@ -688,7 +688,7 @@ for target in env["DIST_BINARIES"]:
 
 # Set the download url to the right place
 compass_type = 'compass-community'
-if 'enterprise' in env['MONGO_MODULES']:
+if 'enterprise' in env['NORMOUS_MODULES']:
     compass_type = 'compass'
 
 compass_script = "install_compass"
@@ -700,7 +700,7 @@ compass_python_interpreter = '/usr/bin/env python2'
 if env.TargetOSIs('darwin'):
     compass_python_interpreter = '/usr/bin/env python'
 
-compass_installer = env.Substfile('#/src/mongo/installer/compass/' + compass_script,
+compass_installer = env.Substfile('#/src/normous/installer/compass/' + compass_script,
                                   SUBST_DICT=[
                                       ('@compass_type@', compass_type),
                                       ('@python_interpreter@', compass_python_interpreter),
@@ -735,13 +735,13 @@ if has_option("use-new-tools"):
             archive_addition_transforms +
             module_banner_transforms +
             [
-                '--transform $BUILD_DIR/mongo/db/modules/enterprise=$SERVER_DIST_BASENAME/bin',
-                '--transform $BUILD_DIR/mongo/stripped/db/modules/enterprise=$SERVER_DIST_BASENAME/bin',
-                '--transform $BUILD_DIR/mongo/stripped=$SERVER_DIST_BASENAME/bin',
-                '--transform $BUILD_DIR/mongo=$SERVER_DIST_BASENAME/bin',
-                '--transform $BUILD_DIR/mongo/stripped/src/mongo-tools=$SERVER_DIST_BASENAME/bin',
-                '--transform src/mongo-tools=$SERVER_DIST_BASENAME/bin',
-                '--transform src/mongo/installer/compass=$SERVER_DIST_BASENAME/bin',
+                '--transform $BUILD_DIR/normous/db/modules/enterprise=$SERVER_DIST_BASENAME/bin',
+                '--transform $BUILD_DIR/normous/stripped/db/modules/enterprise=$SERVER_DIST_BASENAME/bin',
+                '--transform $BUILD_DIR/normous/stripped=$SERVER_DIST_BASENAME/bin',
+                '--transform $BUILD_DIR/normous=$SERVER_DIST_BASENAME/bin',
+                '--transform $BUILD_DIR/normous/stripped/src/normous-tools=$SERVER_DIST_BASENAME/bin',
+                '--transform src/normous-tools=$SERVER_DIST_BASENAME/bin',
+                '--transform src/normous/installer/compass=$SERVER_DIST_BASENAME/bin',
                 '${TEMPFILE(SOURCES[1:])}'
             ],
         ),
@@ -761,8 +761,8 @@ debug_symbols_dist = env.Command(
     action=' '.join(
         [
             '$PYTHON ${SOURCES[0]} -o $TARGET',
-            '--transform $BUILD_DIR/mongo/db/modules/enterprise=$SERVER_DIST_BASENAME',
-            '--transform $BUILD_DIR/mongo=$SERVER_DIST_BASENAME',
+            '--transform $BUILD_DIR/normous/db/modules/enterprise=$SERVER_DIST_BASENAME',
+            '--transform $BUILD_DIR/normous=$SERVER_DIST_BASENAME',
             '${TEMPFILE(SOURCES[1:])}',
         ]
     ),
