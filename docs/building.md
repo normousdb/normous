@@ -41,7 +41,7 @@ associated with Python 2.7.x.
 SCons
 ---------------
 
-For detail information about building, please see [the build manual](https://github.com/normousdb/normous/wiki/Build-normousdb-From-Source)
+For detail information about building, please see [the build manual](https://github.com/normousdb/normous/docs/) (Note: TODO)
 
 If you want to build everything (normousd, normous, tests, etc):
 

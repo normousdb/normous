@@ -5,7 +5,7 @@ import md5
 # Default and alternative generator definitions go here.
 
 # This is the tuple that will be returned by the buildInfo command and
-# printed by the --version command-line option to mongod.
+# printed by the --version command-line option to normousd.
 # Each tuple consists of:
 #   key (string)
 #   value (string)
@@ -15,8 +15,8 @@ import md5
 # want to define them.
 def default_buildinfo_environment_data():
     return (
-        ('distmod', '$MONGO_DISTMOD', True, True,),
-        ('distarch', '$MONGO_DISTARCH', True, True,),
+        ('distmod', '$NORMOUS_DISTMOD', True, True,),
+        ('distarch', '$NORMOUS_DISTARCH', True, True,),
         ('cc', '$CC_VERSION', True, False,),
         ('ccflags', '$CCFLAGS', True, False,),
         ('cxx', '$CXX_VERSION', True, False,),
@@ -27,7 +27,7 @@ def default_buildinfo_environment_data():
     )
 
 # If you want buildInfo and --version to be relatively empty, set
-# MONGO_BUILDINFO_ENVIRONMENT_DATA = empty_buildinfo_environment_data()
+# NORMOUS_BUILDINFO_ENVIRONMENT_DATA = empty_buildinfo_environment_data()
 def empty_buildinfo_environment_data():
     return ()
 
