@@ -1,8 +1,8 @@
-MongoDB Server Documentation
+Normous Server Documentation
 ============
 
 This is just some internal documentation.
 
-For the full MongoDB docs, please see [mongodb.org](http://www.mongodb.org/)
+For the full Normous docs, please see [normousdb.github.com](http://normousdb.github.com/)
 
 * [building](building.md)
