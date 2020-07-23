@@ -548,7 +548,7 @@ var langHeaders = [261]header{
 			"nmedumbacaddocaribecayugaatsamcebuanuchigachibchachagataichuukésmari" +
 			"xíriga chinookchoctawchipewyanucheroquicheyennekurdu centralcópticuc" +
 			"apiznonturcu de Crimeafrancés criollu seselwakashubianudakotadargwat" +
-			"aitadelawareslavedogribdinkazarmadogribaxu sorbiudusun centraldualan" +
+			"aitadelawaresubordinatedogribdinkazarmadogribaxu sorbiudusun centraldualan" +
 			"eerlandés mediujola-fonyidyuladazagaembúefikemilianuexipciu antiguue" +
 			"kajukelamitainglés mediuyupik centralewondoestremeñufangfilipínfinla" +
 			"ndés de Tornedalenfonfrancés cajunfrancés mediufrancés antiguuarpita" +
@@ -1584,7 +1584,7 @@ var langHeaders = [261]header{
 		"afarskiabhaskiavestanskiafrikansakanamharskiaragonskiarapskiasamskiavars" +
 			"kiajmaraazerbejdžanskibaškirskibjeloruskibugarskibislamabambarabenga" +
 			"lskitibetanskibretonskibosanskikatalonskičečenskičamorokorzikanskikr" +
-			"ičeškistaroslavenskičuvaškivelškidanskinjemačkidivehidžongaevegrčkie" +
+			"ičeškistarosubordinatenskičuvaškivelškidanskinjemačkidivehidžongaevegrčkie" +
 			"ngleskiesperantošpanskiestonskibaskijskiperzijskifulahfinskifidžijsk" +
 			"ifarskifrancuskizapadni frizijskiirskiškotski galskigalicijskigvaran" +
 			"igudžaratimankshausahebrejskihindihiri motuhrvatskihaićanski kreolsk" +
@@ -1609,7 +1609,7 @@ var langHeaders = [261]header{
 			"edumbakadokaripskikajugaatsamcebuanočigačibčačagataičukeskimaričinuk" +
 			"ski žargončoktavčipvijanskičirokičejenskicentralnokurdskikoptskikrim" +
 			"ski turskiseselva kreolski francuskikašubijanskidakotadargvataitadel" +
-			"averslavedogribdinkazarmadogridonjolužičkosrpskidualasrednjovjekovni" +
+			"aversubordinatedogribdinkazarmadogridonjolužičkosrpskidualasrednjovjekovni" +
 			" holandskijola-fonidiuladazagaembuefikstaroegipatskiekajukelamitskis" +
 			"rednjovjekovni engleskievondofangfilipinofonsrednjovjekovni francusk" +
 			"istarofrancuskisjeverni frizijskiistočnofrizijskifriulijskigagagaušk" +
@@ -6137,7 +6137,7 @@ var langHeaders = [261]header{
 			"ojpuriBikolBiniKomSiksikaBrajBodoAkooseBuriatBugineeskBuluBlinMedumb" +
 			"aKaddoKaribyskCayugaAtsamCebuanoChigaChibchaChagataiChuukeeskMariChi" +
 			"nook-jargonChoctawChipewyanCherokeeCheyenneSoranîKoptyskKrim-Tataars" +
-			"kKasjoebyskDakotaDargwaTaitaDelawareSlaveDogribDinkaZarmaDogriNeders" +
+			"kKasjoebyskDakotaDargwaTaitaDelawareSubordinateDogribDinkaZarmaDogriNeders" +
 			"orbyskDualaMiddelnederlânskJola-FonyiDyulaDazagaEmbuEfikAldegyptyskE" +
 			"kajukElamityskMiddelingelskEwondoFangFilipynskFonMiddelfrânskAldfrân" +
 			"skNoard-FryskEast-FryskFriulyskGaGayoGbayaGeezGilberteeskMiddelheech" +
@@ -6437,7 +6437,7 @@ var langHeaders = [261]header{
 			"uiBodoAkooseBuriatCànan nam BugisBuluBlinMedumbaCaddoCaribCayugaAtsa" +
 			"mCebuanoChigaChibchaChagataiCànan ChuukMariChinuk WawaChoctawChipewy" +
 			"anCherokeeCheyenneCùrdais MheadhanachCoptaisCapiznonTurcais Chriomac" +
-			"hSeiseallaisCaisiubaisDakotaDargwaTaitaDelawareSlaveyDogribDinkaZarm" +
+			"hSeiseallaisCaisiubaisDakotaDargwaTaitaDelawareSubordinateyDogribDinkaZarm" +
 			"aDogriSòrbais ÌochdarachDusun MheadhanachDualaMeadhan-DhuitsisJola-F" +
 			"onyiDyulaDazagaEmbuEfikÈipheitis ÀrsaidhEkajukElamaisMeadhan-Bheurla" +
 			"Yupik MheadhanachEwondoCànan na h-ExtremaduraFangFilipinisMeänkieliF" +
@@ -6746,7 +6746,7 @@ var langHeaders = [261]header{
 			"rjatischBugineesischBlinCaddoKariibischAtsamCebuanoTschibtschaTschag" +
 			"ataischTrukesischTscheremissischChinookChoctawChipewyanCherokeeCheye" +
 			"nneKoptischKrimtatarischKaschubischTakotaTargiinischDelaware-Schpraa" +
-			"chSlaveyTogribTinkaTogriNidersorbischTualaMittelniderländischTiulaEf" +
+			"chSubordinateyTogribTinkaTogriNidersorbischTualaMittelniderländischTiulaEf" +
 			"ikischAltägyptischEkajukElamischMittelänglischEwondoPangwe-Schpraach" +
 			"FilipinoFonMittelfranzösischAltfranzösischNordfriesischOschtfriesisc" +
 			"hFriulischGaGayoGbayaGeezGilbertesischMittelhochtüütschAlthochtüütsc" +
@@ -8757,7 +8757,7 @@ var langHeaders = [261]header{
 			"luBlinMedumbaCaddoKaribeschCayugaAtsamCebuanoKigaChibcha-SproochTsch" +
 			"agataeschTrukeseschMariChinookChoctawChipewyanCherokeeCheyenneSorani" +
 			"KopteschCapiznonKrimtatareschKaschubeschDakota-SproochDargineschTait" +
-			"aDelaware-SproochSlaveDogribDinka-SproochZarmaDogriNiddersorbeschZen" +
+			"aDelaware-SproochSubordinateDogribDinka-SproochZarmaDogriNiddersorbeschZen" +
 			"tral-DusunDualaMëttelhollänneschJola-FonyiDyula-SproochDazagaKiembuE" +
 			"fikEmilianeschEgypteschEkajukElameschMëttelengleschYup’ikEwondoExtre" +
 			"madureschPangwe-SproochFilipinoMeänkieliFon-SproochCajunMëttelfransé" +
@@ -10348,7 +10348,7 @@ var langHeaders = [261]header{
 			"ojpuribikolbinisiksikabrajbodobakossiburjatiskbuginesiskblincaddocar" +
 			"ibatsamcebuanokigachibchatsjagataiskchuukesiskmarichinookchoctawchip" +
 			"ewianskcherokeecheyennesoranikoptiskkrimtatariskseselwa (fransk-kreo" +
-			"lsk)kasjubiskdakotadargwataitadelawareslavejdogribdinkazarmadogrilåg" +
+			"lsk)kasjubiskdakotadargwataitadelawaresubordinatejdogribdinkazarmadogrilåg" +
 			"sorbiskdualamellomnederlandskjola-fonyidyuladazagaembuefikgammalegyp" +
 			"tiskekajukelamitemellomengelskewondofangfilippinskfonmellomfranskgam" +
 			"malfransknordfrisiskaustfrisiskfriuliskgagayogbayageezgilbertesemell" +
@@ -11449,7 +11449,7 @@ var langHeaders = [261]header{
 			"aarameicaraucanicarapahoarawakasturianawadhibelutschibalinaisbasaabe" +
 			"dschabembabhojpuribikolbinisiksikabrajburiatbugiblincaddocaribicatsa" +
 			"mcebuanochibchatschagataicchuukaismaripatuà chinookchoctawchipewyanc" +
-			"herokeecheyennecoptictirc crimeankaschubicdakotadargwadelawareslavey" +
+			"herokeecheyennecoptictirc crimeankaschubicdakotadargwadelawaresubordinatey" +
 			"dogribdinkadogribass sorbdualaollandais mesaundiulaefikegipzian vegl" +
 			"ekajukelamiticenglais mesaunewondofangfilippinofonfranzos mesaunfran" +
 			"zos veglfris dal nordfris da l’ostfriulangagayogbayageezgilbertaistu" +
@@ -17188,7 +17188,7 @@ const azLangStr string = "" + // Size: 3754 bytes
 	"iyaavadhibalucbalibasabejabembabenaqərbi bəlucbxoçpuribikolbinisiksikəbr" +
 	"ajbodoburyatbuginblinkeddokaribatsamsebuançiqaçibçaçağatayçukizmariçinuk" +
 	" ləhçəsiçoktauçipevyançerokiçeyensorankoptkrım türkcəsiSeyşel kreol fran" +
-	"sızcasıkaşubyandakotadarqvataitadelaverslaveydoqribdinkazarmadoqriaşağı " +
+	"sızcasıkaşubyandakotadarqvataitadelaversubordinateydoqribdinkazarmadoqriaşağı " +
 	"sorbdualaorta hollanddioladyuladazaqaembuefikqədim misirekacukelamitorta" +
 	" ingilisevondofangfilippinfonorta fransızqədim fransızşimali frisfriulqa" +
 	"qaqauzqanqayoqabayaqezqilbertorta yüksək almanqədim almanqondiqorontaloq" +
@@ -18132,7 +18132,7 @@ const deLangStr string = "" + // Size: 5631 bytes
 	"ischBraj-BhakhaBrahuiBodoAkooseBurjatischBuginesischBuluBlinMedumbaCaddo" +
 	"KaribischCayugaAtsamCebuanoRukigaChibchaTschagataischChuukesischMariChin" +
 	"ookChoctawChipewyanCherokeeCheyenneZentralkurdischKoptischCapiznonKrimta" +
-	"tarischSeychellenkreolKaschubischDakotaDarginischTaitaDelawareSlaveDogri" +
+	"tarischSeychellenkreolKaschubischDakotaDarginischTaitaDelawareSubordinateDogri" +
 	"bDinkaZarmaDogriNiedersorbischZentral-DusunDualaMittelniederländischDiol" +
 	"aDyulaDazagaEmbuEfikEmilianischÄgyptischEkajukElamischMittelenglischZent" +
 	"ral-Alaska-YupikEwondoExtremadurischPangweFilipinoMeänkieliFonCajunMitte" +
@@ -18456,7 +18456,7 @@ const enLangStr string = "" + // Size: 4978 bytes
 	"ooseBuriatBugineseBuluBlinMedumbaCaddoCaribCayugaAtsamChakmaCebuanoChiga" +
 	"ChibchaChagataiChuukeseMariChinook JargonChoctawChipewyanCherokeeCheyenn" +
 	"eCentral KurdishCopticCapiznonCrimean TurkishSeselwa Creole FrenchKashub" +
-	"ianDakotaDargwaTaitaDelawareSlaveDogribDinkaZarmaDogriLower SorbianCentr" +
+	"ianDakotaDargwaTaitaDelawareSubordinateDogribDinkaZarmaDogriLower SorbianCentr" +
 	"al DusunDualaMiddle DutchJola-FonyiDyulaDazagaEmbuEfikEmilianAncient Egy" +
 	"ptianEkajukElamiteMiddle EnglishCentral YupikEwondoExtremaduranFangFilip" +
 	"inoTornedalen FinnishFonCajun FrenchMiddle FrenchOld FrenchArpitanNorthe" +
@@ -18706,7 +18706,7 @@ const esLangStr string = "" + // Size: 4366 bytes
 	"cidentalbhoyapuríbicolbinikomsiksikabrajbodoakooseburiatobuginésbulublin" +
 	"medumbacaddocaribecayugaatsamcebuanochigachibchachagatáitrukésmaríjerga " +
 	"chinukchoctawchipewyancheroquicheyenekurdo soranicoptotártaro de Crimeac" +
-	"riollo seychelensecasubiodakotadargvataitadelawareslavedogribdinkazarmad" +
+	"riollo seychelensecasubiodakotadargvataitadelawaresubordinatedogribdinkazarmad" +
 	"ogribajo sorbiodualaneerlandés mediojola-fonyidiuladazagaembuefikegipcio" +
 	" antiguoekajukelamitainglés medioewondofangfilipinofonfrancés cajúnfranc" +
 	"és mediofrancés antiguofrisón septentrionalfrisón orientalfriulanogagag" +
@@ -19697,7 +19697,7 @@ var frLangIdx = []uint16{ // 615 elements
 const frCALangStr string = "" + // Size: 551 bytes
 	"azerbaïdjanaiscrigujaratiyi de Sichuankuanyamakalaallisutodiasame du Nor" +
 	"dsangovolapükadyguévieil anglaisbenabicolbilenmedumbatchagataychinookkur" +
-	"de centralslavetlichoyupik centralewondocajunvieux haut-allemandilocanok" +
+	"de centralsubordinatetlichoyupik centralewondocajunvieux haut-allemandilocanok" +
 	"abardekenyangkölschliveluochinois classiquemeta’marwarimentawaibas allem" +
 	"andao naganewari classiquenkolepalauanallemand de Pennsylvaniebas allema" +
 	"nd mennonitevieux persepalatinancien occitanrarotongaaroumainsantalikurd" +
@@ -20241,7 +20241,7 @@ const hrLangStr string = "" + // Size: 4673 bytes
 	"afarskiabhaskiavestičkiafrikaansakanskiamharskiaragonskiarapskiasamskiav" +
 	"arskiajmarskiazerbajdžanskibaškirskibjeloruskibugarskibislamabambarabang" +
 	"latibetskibretonskibosanskikatalonskičečenskichamorrokorzičkicreečeškicr" +
-	"kvenoslavenskičuvaškivelškidanskinjemačkidivehidzongkhaewegrčkiengleskie" +
+	"kvenosubordinatenskičuvaškivelškidanskinjemačkidivehidzongkhaewegrčkiengleskie" +
 	"sperantošpanjolskiestonskibaskijskiperzijskifulafinskifidžijskiferojskif" +
 	"rancuskizapadnofrizijskiirskiškotski gaelskigalicijskigvaranskigudžarats" +
 	"kimanskihausahebrejskihindskihiri motuhrvatskihaićanski kreolskimađarski" +
@@ -20265,7 +20265,7 @@ const hrLangStr string = "" + // Size: 4673 bytes
 	"skibuginskibulublinmedumbacaddokaripskicayugaatsamcebuanochigačibčačagat" +
 	"ajskichuukesemarijskichinook žargonchoctawchipewyančerokijskičejenskisor" +
 	"anski kurdskikoptskikrimski turskisejšelski kreolskikašupskidakota jezik" +
-	"dargwataitadelavarskislavedogribdinkazarmadogridonjolužičkidualasrednjon" +
+	"dargwataitadelavarskisubordinatedogribdinkazarmadogridonjolužičkidualasrednjon" +
 	"izozemskijola-fonyidyuladazagaembuefikstaroegipatskiekajukelamitskisredn" +
 	"joengleskiewondofangfilipinskifonkajunski francuskisrednjofrancuskistaro" +
 	"francuskisjevernofrizijskiistočnofrizijskifurlanskigagagauskigan kineski" +
@@ -20719,7 +20719,7 @@ const idLangStr string = "" + // Size: 4042 bytes
 	"uriBikolBiniBanjarKomSiksikaBrajBodoAkooseBuriatBugisBuluBlinMedumbaKado" +
 	"KaribCayugaAtsamCebuanoKigaChibchaChagataiChuukeMariJargon ChinookKoktaw" +
 	"ChipewyanCherokeeCheyenneKurdi SoraniKoptikTatar KrimeaSeselwa Kreol Pra" +
-	"ncisKashubiaDakotaDargwaTaitaDelawareSlaveDogribDinkaZarmaDogriSorbia Hi" +
+	"ncisKashubiaDakotaDargwaTaitaDelawareSubordinateDogribDinkaZarmaDogriSorbia Hi" +
 	"lirDualaBelanda Abad PertengahanJola-FonyiDyulaDazagaEmbuEfikMesir KunoE" +
 	"kajukElamInggris Abad PertengahanEwondoFangFilipinoFonPrancis CajunPranc" +
 	"is Abad PertengahanPrancis KunoArpitanFrisia UtaraFrisia TimurFriuliGaGa" +
@@ -21021,7 +21021,7 @@ const itLangStr string = "" + // Size: 5065 bytes
 	"bishnupriyabakhtiaribrajbrahuibodoakooseburiatbugibulublinmedumbacaddoca" +
 	"ribicocayugaatsamcebuanochigachibchaciagataicochuukesemarigergo chinookc" +
 	"hoctawchipewyancherokeecheyennecurdo soranicoptocapiznonturco crimeocreo" +
-	"lo delle Seychelleskashubiandakotadargwataitadelawareslavedogribdincazar" +
+	"lo delle Seychelleskashubiandakotadargwataitadelawaresubordinatedogribdincazar" +
 	"madogribasso sorabodusun centraledualaolandese mediojola-fonydiuladazaga" +
 	"embuefikemilianoegiziano anticoekajukaelamiticoinglese medioyupik centra" +
 	"leewondoestremegnofangfilippinofinlandese del Tornedalenfonfrancese caju" +
@@ -22337,7 +22337,7 @@ const ltLangStr string = "" + // Size: 5975 bytes
 	"ibandžarųkomųsiksikųbišnuprijosbakhtiaribrajųbrahujųbodoakūsųburiatųbugi" +
 	"nezųbulublinmedumbųkadokaribųkaijūgųatsamųsebuanųčigųčibčųčagatųčukesųma" +
 	"riųčinuk žargonasčoktaučipvėjųčerokiųčajenųsoranių kurdųkoptųcapiznonKry" +
-	"mo turkųSeišelių kreolų ir prancūzųkašubųdakotųdargvataitųdelaveroslaved" +
+	"mo turkųSeišelių kreolų ir prancūzųkašubųdakotųdargvataitųdelaverosubordinated" +
 	"ogribųdinkųzarmųdogrižemutinių sorbųcentrinio DusunodualųVidurio Vokieti" +
 	"josdžiola-fonidyulųdazagųembuefikitalų kalbos Emilijos tarmėsenovės egip" +
 	"tiečiųekajukelamitųVidurio Anglijoscentrinės Aliaskos jupikųevondoispanų" +
@@ -23689,7 +23689,7 @@ const nlLangStr string = "" + // Size: 4765 bytes
 	"huiBodoAkooseBoerjatischBugineesBuluBlinMedumbaCaddoCaribischCayugaAtsam" +
 	"CebuanoChigaChibchaChagataiChuukeesMariChinook JargonChoctawChipewyanChe" +
 	"rokeeCheyenneSoranîKoptischCapiznonKrim-TataarsSeychellencreoolsKasjoebi" +
-	"schDakotaDargwaTaitaDelawareSlaveyDogribDinkaZarmaDogriNedersorbischDusu" +
+	"schDakotaDargwaTaitaDelawareSubordinateyDogribDinkaZarmaDogriNedersorbischDusu" +
 	"nDualaMiddelnederlandsJola-FonyiDyulaDazagaEmbuEfikEmilianoOudegyptischE" +
 	"kajukElamitischMiddelengelsYupikEwondoExtremeensFangFilipijnsTornedal-Fi" +
 	"nsFonCajun-FransMiddelfransOudfransArpitaansNoord-FriesOost-FriesFriulis" +
@@ -23846,7 +23846,7 @@ const noLangStr string = "" + // Size: 4856 bytes
 	"nibanjarkomsiksikabishnupriyabakhtiaribrajbrahuibodoakoseburjatiskbugine" +
 	"siskbulublinmedumbacaddokaribiskcayugaatsamcebuanskkigachibchatsjagataic" +
 	"huukesiskmarichinookchoctawchipewianskcherokesiskcheyennekurdisk (sorani" +
-	")koptiskkapizkrimtatariskseselwakasjubiskdakotadargwataitadelawareslavey" +
+	")koptiskkapizkrimtatariskseselwakasjubiskdakotadargwataitadelawaresubordinatey" +
 	"dogribdinkazarmadogrilavsorbisksentraldusundualamellomnederlandskjola-fo" +
 	"nyidyuladazagakiembuefikemilianskgammelegyptiskekajukelamittiskmellomeng" +
 	"elsksentralyupikewondoekstremaduranskfangfilipinotornedalsfinskfoncajunf" +
@@ -24141,7 +24141,7 @@ const plLangStr string = "" + // Size: 5587 bytes
 	"bradźbrahuibodoakooseburiackibugijskibulublinmedumbakaddokaraibskikajuga" +
 	"atsamcebuanochigaczibczaczagatajskichuukmaryjskiżargon czinuckiczoktawsk" +
 	"iczipewiańskiczirokeskiczejeńskisoranikoptyjskicapiznonkrymskotatarskikr" +
-	"eolski seszelskikaszubskidakotadargwijskitaitadelawareslavedogribdinkadż" +
+	"eolski seszelskikaszubskidakotadargwijskitaitadelawaresubordinatedogribdinkadż" +
 	"ermadogridolnołużyckidusun centralnydualaśredniowieczny niderlandzkidiol" +
 	"adiuladazagaembuefikemilijskistaroegipskiekajukelamickiśrednioangielskiy" +
 	"upik środkowosyberyjskiewondoestremadurskifangfilipinomeänkielifoncajuńs" +
@@ -24559,7 +24559,7 @@ const roLangStr string = "" + // Size: 4259 bytes
 	"seburiatbuginezăbulublinmedumbacaddocaribcayugaatsamcebuanăchigachibchac" +
 	"hagataichuukesemarijargon chinookchoctawchipewyancherokeecheyennekurdă c" +
 	"entralăcoptăturcă crimeeanăcreolă franceză seselwacașubianădakotadargwat" +
-	"aitadelawareslavedogribdinkazarmadogrisorabă de josdualaneerlandeză medi" +
+	"aitadelawaresubordinatedogribdinkazarmadogrisorabă de josdualaneerlandeză medi" +
 	"ejola-fonyidyuladazagaembuefikegipteană vecheekajukelamităengleză mediee" +
 	"wondofangfilipinezăfonfranceză cajunfranceză mediefranceză vechefrizonă " +
 	"nordicăfrizonă orientalăfriulanăgagăgăuzăchineză gangayogbayageezgilbert" +
@@ -25181,7 +25181,7 @@ const slLangStr string = "" + // Size: 6475 bytes
 	"akadoščinakaribski jeziksebuanščinačigajščinačibčevščinačagatajščinatruk" +
 	"eščinamarijščinačinuški žargončoktavščinačipevščinačerokeščinačejenščina" +
 	"soranska kurdščinakoptščinakrimska tatarščinasejšelska francoska kreolšč" +
-	"inakašubščinadakotščinadarginščinataitajščinadelavarščinaslavejščinadogr" +
+	"inakašubščinadakotščinadarginščinataitajščinadelavarščinasubordinatejščinadogr" +
 	"ibdinkazarmajščinadogridolnja lužiška srbščinadualasrednja nizozemščinaj" +
 	"ola-fonjiščinadiuladazagaembujščinaefiščinastara egipčanščinaekajukelamš" +
 	"činasrednja angleščinaevondovščinafangijščinafilipinščinafonščinacajuns" +
@@ -25801,7 +25801,7 @@ const svLangStr string = "" + // Size: 5493 bytes
 	"bodobakossiburjätiskabuginesiskabouloublinbagangtecaddokaribiskacayugaat" +
 	"samcebuanochigachibchachagataichuukesiskamariskachinookchoctawchipewyanc" +
 	"herokesiskacheyennesoranisk kurdiskakoptiskakapisnonkrimtatariskaseychel" +
-	"lisk kreolkasjubiskadakotadarginskataitadelawareslavejdogribdinkazarmado" +
+	"lisk kreolkasjubiskadakotadarginskataitadelawaresubordinatejdogribdinkazarmado" +
 	"grilågsorbiskacentraldusundualamedelnederländskajola-fonyidyuladazagaemb" +
 	"uefikemiliskafornegyptiskaekajukelamitiskamedelengelskacentralalaskisk j" +
 	"upiskaewondoextremaduriskafangfilippinskameänkielifonspråketcajun-fransk" +
@@ -26585,7 +26585,7 @@ const trLangStr string = "" + // Size: 5998 bytes
 	"uryatçaBugisBuluBlinMedumbaKado diliCaribKayuga diliAtsamSebuano diliKig" +
 	"acaÇibça diliÇağataycaChuukeseMari diliÇinuk diliÇoktav diliÇipevya dili" +
 	"ÇerokiceŞayenceOrta KürtçeKıpticeCapiznonKırım TürkçesiSeselwa Kreole F" +
-	"ransızcasıKashubianDakotacaDarginceTaitaDelawareSlavey diliDogribDinka d" +
+	"ransızcasıKashubianDakotacaDarginceTaitaDelawareSubordinatey diliDogribDinka d" +
 	"iliZarmaDogriAşağı SorbçaOrta KadazanDualaOrtaçağ FelemenkçesiJola-Fonyi" +
 	"DyulaDazagaEmbuEfikEmilia DiliEski Mısır DiliEkajukElamOrtaçağ İngilizce" +
 	"siMerkezi YupikçeEwondoEkstremadura DiliFangFilipinceTornedalin FincesiF" +
@@ -27195,7 +27195,7 @@ const viLangStr string = "" + // Size: 8700 bytes
 	" ChagataiTiếng ChuukTiếng MariBiệt ngữ ChinookTiếng ChoctawTiếng Chipewy" +
 	"anTiếng CherokeeTiếng CheyenneTiếng Kurd Miền TrungTiếng CopticTiếng Cap" +
 	"iznonTiếng Thổ Nhĩ Kỳ CrimeanTiếng Pháp Seselwa CreoleTiếng KashubiaTiến" +
-	"g DakotaTiếng DargwaTiếng TaitaTiếng DelawareTiếng SlaveTiếng DogribTiến" +
+	"g DakotaTiếng DargwaTiếng TaitaTiếng DelawareTiếng SubordinateTiếng DogribTiến" +
 	"g DinkaTiếng ZarmaTiếng DogriTiếng Hạ SorbiaTiếng Dusun Miền TrungTiếng " +
 	"DualaTiếng Hà Lan Trung cổTiếng Jola-FonyiTiếng DyulaTiếng DazagaTiếng E" +
 	"mbuTiếng EfikTiếng EmiliaTiếng Ai Cập cổTiếng EkajukTiếng ElamiteTiếng A" +
@@ -31720,7 +31720,7 @@ const hrScriptStr string = "" + // Size: 2397 bytes
 	"ijsko pismobamum pismobassa vah pismobatak pismobengalsko pismoblissymbo" +
 	"lsbopomofo pismobrahmi pismobrajicabuginsko pismobuhid pismochakma pismo" +
 	"unificirani kanadski aboriđinski slogovikarijsko pismočamsko pismočeroki" +
-	" pismocirth pismokoptsko pismocypriot pismoćirilicastaroslavenska crkven" +
+	" pismocirth pismokoptsko pismocypriot pismoćirilicastarosubordinatenska crkven" +
 	"a čirilicadevangari pismodeseret pismoegipatsko narodno pismoegipatsko h" +
 	"ijeratsko pismoegipatski hijeroglifietiopsko pismogruzijsko khutsuri pis" +
 	"mogruzijsko pismoglagoljicagotičko pismograntha pismogrčko pismogudžarat" +

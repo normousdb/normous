@@ -67,7 +67,7 @@ DEFAULT_CONFIG = Config(
         unacceptable=0.4), reliable_min_runs=5, reliable_time_period=datetime.timedelta(weeks=1),
     unreliable_min_runs=20, unreliable_time_period=datetime.timedelta(weeks=4))
 
-DEFAULT_PROJECT = "mongodb-mongo-master"
+DEFAULT_PROJECT = "mongodb-mongo-main"
 
 DEFAULT_NUM_THREADS = 12
 
@@ -665,7 +665,7 @@ class LifecycleTagsFile(object):  # pylint: disable=too-many-instance-attributes
         """Initalize the LifecycleTagsFile.
 
         Arguments:
-            project: The Evergreen project name, e.g. "mongodb-mongo-master".
+            project: The Evergreen project name, e.g. "mongodb-mongo-main".
             lifecycle_file: The path to the lifecycle tags file. If 'metadata_repo_url' is
                 specified, this path must be relative to the root of the metadata repository.
             metadata_repo_url: The URL of the metadat repository that contains the test lifecycle

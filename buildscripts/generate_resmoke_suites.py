@@ -314,7 +314,7 @@ class Main(object):
 
         parser.add_argument("--analysis-duration", dest="duration_days", default=14,
                             help="Number of days to analyze.")
-        parser.add_argument("--branch", dest="branch", default="master",
+        parser.add_argument("--branch", dest="branch", default="main",
                             help="Branch of project to analyze.")
         parser.add_argument("--end-commit", dest="end_commit", help="End analysis at this commit.")
         parser.add_argument("--execution-time", dest="execution_time_minutes", default=60, type=int,

@@ -61,7 +61,7 @@ def parse_command_line():
 
     # The executor_file and suite_files defaults are required to make the
     # suite resolver work correctly.
-    parser.set_defaults(base_commit=None, branch="master", buildvariant=None, check_evergreen=False,
+    parser.set_defaults(base_commit=None, branch="main", buildvariant=None, check_evergreen=False,
                         evergreen_file="etc/evergreen.yml", selector_file="etc/burn_in_tests.yml",
                         max_revisions=25, no_exec=False, executor_file=None,
                         report_file="report.json", suite_files="with_server", test_list_file=None,
