@@ -73,7 +73,7 @@ type saslResult struct {
 }
 
 type saslMechNegotation struct {
-	IsMaster           int    `bson:"ismaster"`
+	IsMain           int    `bson:"ismain"`
 	SaslSupportedMechs string `bson:"saslSupportedMechs"`
 }
 
@@ -218,7 +218,7 @@ func (socket *MongoSocket) Login(cred Credential) error {
 
 func (socket *MongoSocket) negotiateDefaultMech(cred Credential) (string, error) {
 	user := cred.Source + "." + cred.Username
-	req := &saslMechNegotation{IsMaster: 1, SaslSupportedMechs: user}
+	req := &saslMechNegotation{IsMain: 1, SaslSupportedMechs: user}
 	res := saslMechResult{}
 	err := socket.loginRun(cred.Source, &req, &res, func() error {
 		if !res.Ok {

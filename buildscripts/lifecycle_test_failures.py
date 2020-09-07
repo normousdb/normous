@@ -319,7 +319,7 @@ class TestHistory(object):
     """Class for interacting with the /test_history Evergreen API endpoint."""
 
     DEFAULT_API_SERVER = "https://evergreen.mongodb.com"
-    DEFAULT_PROJECT = "mongodb-mongo-master"
+    DEFAULT_PROJECT = "mongodb-mongo-main"
 
     DEFAULT_TEST_STATUSES = ("pass", "fail", "silentfail")
     DEFAULT_TASK_STATUSES = ("success", "failed", "timeout", "sysfail")

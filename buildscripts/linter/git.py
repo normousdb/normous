@@ -101,7 +101,7 @@ class Repo(_git.Repository):
         # type: (Callable[[str], bool], str) -> List[str]
         """Query git to get a list of files in the repo from a diff."""
         # There are 3 diffs we run:
-        # 1. List of commits between origin/master and HEAD of current branch
+        # 1. List of commits between origin/main and HEAD of current branch
         # 2. Cached/Staged files (--cached)
         # 3. Working Tree files git tracks
 
@@ -213,7 +213,7 @@ def get_files_to_check_from_patch(patches, filter_function):
 def get_my_files_to_check(filter_function, origin_branch):
     # type: (Callable[[str], bool], str) -> List[str]
     """Get a list of files that need to be checked based on which files are managed by git."""
-    # Get a list of candidate_files based on diff between this branch and origin/master
+    # Get a list of candidate_files based on diff between this branch and origin/main
     repos = get_repos()
 
     valid_files = list(

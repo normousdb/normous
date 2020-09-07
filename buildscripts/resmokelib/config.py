@@ -87,7 +87,7 @@ DEFAULTS = {
     "execution_number": 0,
     "git_revision": None,
     "patch_build": False,
-    "project_name": "mongodb-mongo-master",
+    "project_name": "mongodb-mongo-main",
     "revision_order_id": None,
     "task_id": None,
     "task_name": None,

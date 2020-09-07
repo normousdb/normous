@@ -175,7 +175,7 @@ def parse_args():
     """Parse the program arguments."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--project", required=True,
-                        help="The Evergreen project. e.g mongodb-mongo-master")
+                        help="The Evergreen project. e.g mongodb-mongo-main")
 
     parser.add_argument("--buildVariant", required=True,
                         help="The build variant. e.g enterprise-rhel-62-64-bit")

@@ -74,7 +74,7 @@ def get_git_branch_string(prefix="", postfix=""):
             return ""
 
     branch = get_git_branch()
-    if branch is None or branch == "master":
+    if branch is None or branch == "main":
         return ""
     return prefix + branch + postfix
 
